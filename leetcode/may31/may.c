@@ -4,21 +4,28 @@
 //element twice.
 // You can return the answer in any order.
 
-#include <stdio.h>
-int main(){
-    int nums[5]={1,2,3,4,5};
-    int target =3;
-    int i,j;
-    int result1, result2;
-    for (i=0;i<5;i++){
-        for (j=i+1;j<5;j++){
-            if (nums[i]+nums[j]==target){
-                result1=i;
-                result2=j;
-                printf("The indices are %d and %d. \n", result1, result2);
-                printf("Enjoy Programming\n");
+#include <stdlib.h>
+
+int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+    int i, j;
+
+    for (i = 0; i < numsSize; i++) {
+        for (j = i + 1; j < numsSize; j++) {
+            if (nums[i] + nums[j] == target) {
+
+                int* result = (int*)malloc(2 * sizeof(int));
+
+                result[0] = i;
+                result[1] = j;
+
+                *returnSize = 2;
+
+                return result;
             }
         }
-    } 
-    return 0;
+    }
+
+    *returnSize = 0;
+    return NULL;
 }
+  
