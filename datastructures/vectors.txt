@@ -1,0 +1,5 @@
+STL : Standard Template library
+it has already implemented data structures like stack , queue
+
+similaryly vectors is also implemented in stl.
+

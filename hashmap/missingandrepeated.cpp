@@ -1,0 +1,48 @@
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+        int n = grid.size();
+        int missing = -1, repeat = -1;
+
+        unordered_map<int, int> freq;
+
+        for (auto& row : grid) {
+            for (int num : row) {
+                freq[num]++;
+            }
+        }
+
+        for (int num = 1; num <= n * n; num++) {
+            if (!freq.count(num)) {
+                missing = num;
+            }
+            else if (freq[num] == 2) {
+                repeat = num;
+            }
+        }
+
+        return {repeat, missing};
+    }
+};
+
+int main() {
+    Solution sol;
+
+    vector<vector<int>> grid = {
+        {1, 3},
+        {2, 2}
+    };
+
+    vector<int> result = sol.findMissingAndRepeatedValues(grid);
+
+    cout << "Repeated: " << result[0] << endl;
+    cout << "Missing: " << result[1] << endl;
+
+    return 0;
+}

@@ -1,0 +1,29 @@
+Array syntax :
+int marks1, marks2, marks3, marks4, marks5;
+
+we cannot store every data in a single variable thats why we use array.
+array stores data in a single block of data
+
+2) It is a homogeneous data strucrture that means it store data of one and only i.e same type of data
+3) contigious in memory
+4) Array are linear data strucrture
+
+suppose we want to store marks of five student
+
+int marks[5];
+it store data from 0 to n-1
+
+first we have to declare data type of array, then after name of array and then the size of array.
+
+if first starts with 100 then second will start from 104 and then 108 and so on.
+because integer will take 4 bytes of memory.
+
+Pass by reference
+
+array are non-primitive in nature
+
+in pass by value it makes copy out of that and that change is not reflected in the original so we need to do pass by reference that means passing address of that and 
+in programming address is very importannt
+
+# Linear Search
+
